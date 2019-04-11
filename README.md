@@ -1,6 +1,6 @@
 # logger-web
 
-## RequireMents
+## Requirements
 
 download and run [logging-layer-registry](https://github.com/SadeghMahmoudpour/logging-layer-registry)  
 and [logging-layer-api](https://github.com/SadeghMahmoudpour/logging-layer-api)
