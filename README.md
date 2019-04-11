@@ -1,7 +1,5 @@
 # logger-web
 
-> My brilliant Nuxt.js project
-
 ## Build Setup
 
 ``` bash
