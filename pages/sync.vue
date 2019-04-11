@@ -43,7 +43,7 @@ export default {
       console.log(this.log)
       const data = {
         data: this.log,
-        retrievable: true,
+        retrievable: false,
         tag: this.tag,
         key: this.key
       }

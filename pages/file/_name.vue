@@ -17,7 +17,7 @@
             {{ data.index + 1 }}
           </template>
           <template slot="pathSuffix" slot-scope="data">
-            <a v-if="data.item.type==='FILE'" :href="getLink(data.item)">{{ data.value }}</a>
+            <a v-if="data.item.type==='FILE'" :href="getLink(data.item)">{{ getFileName(data.value) }}</a>
             <a v-else href="#" @click.prevent="updateFiles(data.value)">{{ data.value }}</a>
           </template>
           <template slot="length" slot-scope="data">
@@ -74,6 +74,13 @@ export default {
       this.path = path
       this.files = data.FileStatuses.FileStatus
       this.$router.push({ path: `/file${path}` })
+    },
+    getFileName(name) {
+      const spl = name.split('hdfs.')
+      if (spl.length > 1) {
+        return spl[1]
+      }
+      return spl[0]
     }
   }
 }
