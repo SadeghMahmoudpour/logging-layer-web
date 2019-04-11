@@ -4,7 +4,7 @@
       <b-nav-toggle target="nav__collapse" />
       <b-collapse is-nav id="nav__collapse" class="navbar__content">
         <b-navbar-nav>
-          <b-nav-item href="/admin">مدیریت کارفرماها</b-nav-item>
+          <b-nav-item href="/">مدیریت کارفرماها</b-nav-item>
           <b-nav-item href="/logs">مجموعه‌ها</b-nav-item>
         </b-navbar-nav>
 
