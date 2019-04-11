@@ -1,5 +1,10 @@
 # logger-web
 
+## RequireMents
+
+download and run [logging-layer-registry](https://github.com/SadeghMahmoudpour/logging-layer-registry)  
+and [logging-layer-api](https://github.com/SadeghMahmoudpour/logging-layer-api)
+
 ## Build Setup
 
 ``` bash
@@ -16,3 +21,4 @@ $ yarn start
 # generate static project
 $ yarn run generate
 ```
+visit [http://localhost:3001](http://localhost:3001) in your browser
