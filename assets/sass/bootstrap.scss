@@ -1,0 +1,55 @@
+@import "variables";
+@import "~bootstrap/scss/bootstrap.scss";
+
+// bootstrap checkbox rtl styling issue
+*[dir="rtl"] .custom-control-indicator {
+  right: 0;
+}
+
+*[dir="rtl"] .custom-checkbox {
+  padding-left: 0 !important;
+  margin-right: 0 !important;
+  padding-right: 25px !important;
+}
+
+.border-info .text-container:hover {
+  background-color: rgba(30, 105, 191, 0.3);
+}
+
+.border-success .text-container:hover {
+  background-color: rgba(56, 211, 176, 0.3);
+}
+
+.border-royal .text-container:hover {
+  background-color: rgba(227, 150, 242, 0.3);
+}
+
+.border-danger .text-container:hover {
+  background-color: rgba(237, 85, 104, 0.3);
+}
+
+.border-secondary .text-container:hover {
+  background-color: rgba(139, 139, 139, 0.3);
+}
+
+body {
+  font-size: 0.875rem;
+}
+
+@include media-breakpoint-up(sm) {
+  body {
+    font-size: 0.950rem;
+  }
+}
+
+@include media-breakpoint-up(md) {
+  body {
+    font-size: 1.1rem;
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  body {
+    font-size: 1.3rem;
+  }
+}

@@ -1,0 +1,53 @@
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+
+// Variables should follow the `$component-state-property-size` formula for
+// consistent naming. Ex: $nav-link-disabled-color and $modal-content-box-shadow-xs.
+
+$font-family-base: "Shabnam-FD", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+
+// colors
+$teal: #00edc2;
+$teal-dark: #00dcb1;
+$pink: #f370f0;
+$orange: #eeb011;
+
+$html-bg: #e0e0e0;
+$body-bg: #f0f0f0;
+
+$primary-light: #6687e3;
+$primary: #4f6bd2;
+$primary-dark: #3f50be;
+$secondary: #b2b2b2;
+$success: $teal;
+
+$theme-colors: (
+  "primary": $primary,
+  "secondary": $secondary,
+  "success": $success,
+  "success-dark": $teal-dark,
+);
+
+// sidebar
+$sidebar-grey-100-color: #e5e5e5;
+$sidebar-grey-200-color: #d6d6d6;
+$sidebar-grey-300-color: #575757;
+
+// wizard
+$wizard-dark-color: $dark;
+$wizard-gray-100-color: #e5e5e5;
+$wizard-gray-200-color: $secondary;
+$wizard-gray-300-color: #575757;
+
+// doi-search widget
+$doi-search-bg-color: #e9fdf7;
+$doi-search-input-bg-color: #b5f9e8;
+$doi-search-label-color: $teal;
+
+// form
+$form-save-hover-color: $teal-dark;
+$form-print-hover-color: $primary-light;
+$form-history-hover-color: #f370f0;
+
+// bootstrap variable overrides
+$table-border-color: white;
