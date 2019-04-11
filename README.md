@@ -22,3 +22,9 @@ $ yarn start
 $ yarn run generate
 ```
 visit [http://localhost:3001](http://localhost:3001) in your browser
+and use the login
+
+``` bash
+username: admin
+password: admin
+```
