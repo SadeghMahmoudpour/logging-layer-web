@@ -7,6 +7,7 @@
           <b-nav-item href="/">مدیریت کارفرماها</b-nav-item>
           <b-nav-item href="/logs">مجموعه‌ها</b-nav-item>
           <b-nav-item href="/file">پوشه‌ها</b-nav-item>
+          <b-nav-item href="/sync">تست ثبت داده</b-nav-item>
         </b-navbar-nav>
 
         <b-navbar-nav class="mr-auto"></b-navbar-nav>

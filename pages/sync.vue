@@ -18,8 +18,17 @@
         <b-form-textarea v-model="log" id="textarea" dir="ltr" placeholder="Enter something..." rows="10" @change="prettyJson" />
       </div>
     </b-row>
+    <div class="row my-3" dir="ltr">
+      <b-form-checkbox
+        id="checkbox-1"
+        v-model="retrievavle"
+        name="checkbox-1"
+      >
+        ذخیره سازی در مانگو برای استفاده مستقیم
+      </b-form-checkbox>
+    </div>
     <div>
-      <b-button @click="saveLog">ذخیره</b-button>
+      <b-button variant="success" @click="saveLog">ذخیره</b-button>
     </div>
   </div>
 </template>
@@ -34,7 +43,8 @@ export default {
     return {
       log: '',
       tag: '',
-      key: ''
+      key: '',
+      retrievavle: true
     }
   },
   methods: {
@@ -43,15 +53,19 @@ export default {
       console.log(this.log)
       const data = {
         data: this.log,
-        retrievable: false,
+        retrievable: this.retrievavle,
         tag: this.tag,
         key: this.key
       }
       try {
         let response = await this.$axios.post('/api/log', data)
         console.log(response)
-      } catch (e) {
-        console.log(e.message)
+        this.$toast.success('داده با موفقیت ثبت شپ')
+      } catch ({ response }) {
+        console.log(response.data.statusCode)
+        if (response && response.data && response.data.statusCode === 401) {
+          this.$toast.error(response.data.message)
+        }
       }
     },
     prettyJson: function() {
@@ -59,7 +73,7 @@ export default {
       try {
         this.log = JSON.stringify(JSON.parse(this.log), undefined, 4)
       } catch (e) {
-        console.error(e.message)
+        this.$toast.error('فرمت داده باید JSON باشد')
       }
     }
   }
