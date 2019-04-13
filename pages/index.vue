@@ -198,7 +198,12 @@ export default {
         await this.$axios.delete('/api/admin/client', { params })
         this.$toast.success('کارفرما با موفقیت حذف شد')
         this.$refs.clTable.refresh()
-      } catch (e) {}
+      } catch ({ response }) {
+        if (response && response.data && response.data.statusCode === 400) {
+          this.$toast.error(response.data.message)
+          this.$refs.clTable.refresh()
+        }
+      }
     },
     firstClicked() {
       this.clicked = true
