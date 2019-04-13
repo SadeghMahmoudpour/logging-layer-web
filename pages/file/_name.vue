@@ -2,6 +2,7 @@
   <div class="mx-auto text-right my-5">
     <div class="section">
       <h2 class="section-title">لیست پوشه‌ها</h2>
+      {{path}}
       <div class="section-content py-2">
         <b-table
           responsive="lg"
@@ -64,7 +65,7 @@ export default {
     }
   },
   async asyncData({ params, $axios }) {
-    const path = params.name || ''
+    const path = params.name ? '/' + params.name : ''
     const reqParams = { path }
     const { data } = await $axios.get('/api/file/list', { params: reqParams })
     return {
