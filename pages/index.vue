@@ -190,6 +190,9 @@ export default {
       }
     },
     async deleteClient(clientId) {
+      if (!confirm('از حذف کارفرما اطمینان دارید؟')) {
+        return
+      }
       const params = { clientId }
       try {
         await this.$axios.delete('/api/admin/client', { params })

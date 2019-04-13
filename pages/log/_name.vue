@@ -12,7 +12,13 @@
           <date-picker v-model="date_to"></date-picker>
         </div>
         <div class="col">
-          <div class="row justify-content-center align-items-end h-100">
+          <div class="row justify-content-around align-items-end h-100">
+            <b-button
+              variant="success"
+              size="lg"
+              @click="updatePage(1)"
+              :disabled="sortQueryState === 'invalid' || filterQueryState === 'invalid'"
+            >اعمال</b-button>
             <b-button variant="success" size="lg" @click="exportLogs">استخراج</b-button>
           </div>
         </div>
@@ -63,14 +69,6 @@
                     ></b-form-textarea>
                   </b-form-group>
                 </div>
-              </div>
-              <div class="row justify-content-center align-items-center h-100">
-                <b-button
-                  variant="success"
-                  size="lg"
-                  @click="updatePage(1)"
-                  :disabled="sortQueryState === 'invalid' || filterQueryState === 'invalid'"
-                >اعمال</b-button>
               </div>
             </b-card-text>
           </b-card-body>
