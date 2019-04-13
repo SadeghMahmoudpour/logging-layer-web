@@ -82,6 +82,9 @@
               />
             </b-card>
           </template>
+          <template slot="delete" slot-scope="data">
+            <b-button variant="danger" @click="deleteCollection(data.item)">حذف</b-button>
+          </template>
         </b-table>
       </div>
     </div>
@@ -179,6 +182,10 @@ export default {
         {
           key: 'timeChart',
           label: (this.dateFrom || this.dateTo) ? 'نمودار زمانی' : 'نمودار زمانی ماه اخیر'
+        },
+        {
+          key: 'delete',
+          label: 'حذف'
         }
       ]
     }
@@ -331,6 +338,21 @@ export default {
             borderWidth: 1
           }
         ]
+      }
+    },
+    async deleteCollection(item) {
+      if (!confirm('از حذف مجموعه ' + item.name + 'اطمینان دارید؟')) {
+        return
+      }
+      const params = {
+        collection: item.name
+      }
+      try {
+        await this.$axios.delete('api/log/collection', { params })
+        this.updateList()
+        this.$toast.success('مجموعه ' + item.name + ' با موفقیت حذف شد')
+      } catch (e) {
+        this.$toast.error('حذف با مشکل مواجه شد')
       }
     }
   }
