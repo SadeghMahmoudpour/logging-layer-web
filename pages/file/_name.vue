@@ -2,7 +2,6 @@
   <div class="mx-auto text-right my-5">
     <div class="section">
       <h2 class="section-title">لیست پوشه‌ها</h2>
-      {{path}}
       <div class="section-content py-2">
         <b-table
           responsive="lg"
